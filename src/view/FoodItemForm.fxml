@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FoodItemFormController">
+   <children>
+      <TabPane layoutY="83.0" prefHeight="625.0" prefWidth="1033.0" style="-fx-background-color: #98A7B1;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="242.0">
+         <tabs>
+            <Tab fx:id="mealTab" onSelectionChanged="#clearMealPage" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Meal">
+               <content>
+                  <Pane prefHeight="532.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <Label layoutX="64.0" layoutY="41.0" text="Select Meal">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cmbMeal" layoutX="64.0" layoutY="86.0" onAction="#cmbMealDragOnAction" prefHeight="31.0" prefWidth="302.0" promptText="Meal" unFocusColor="BLACK" />
+                        <Label layoutX="64.0" layoutY="197.0" text="Meal ID :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMealId" layoutX="188.0" layoutY="194.0" onAction="#txtMealIdOnAction" onKeyReleased="#checkMealId" prefHeight="35.0" prefWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="63.0" layoutY="373.0" text="Quantity :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="256.0" text="Description :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="316.0" text="Unit Price :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMealQuantity" layoutX="187.0" layoutY="370.0" onKeyReleased="#checkMealQuantity" prefHeight="35.0" prefWidth="126.0" promptText="0" />
+                        <TextField fx:id="txtMealDescription" layoutX="188.0" layoutY="253.0" onAction="#txtMealDesOnAction" onKeyReleased="#checkMealDescription" prefHeight="35.0" prefWidth="404.0" promptText="Chicken Buriyani-Full" />
+                        <TextField fx:id="txtMealUnitPrice" layoutX="187.0" layoutY="313.0" onAction="#txtUnitPriceOnAction" onKeyReleased="#checkMealUnitPrice" prefHeight="35.0" prefWidth="188.0" promptText="750.00" />
+                        <ImageView fitHeight="36.0" fitWidth="75.0" layoutX="215.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-rice-bowl-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="btnAddMeal" buttonType="RAISED" layoutX="117.0" layoutY="472.0" onAction="#mealAddOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #16a085;" text="+ Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdateMeal" buttonType="RAISED" layoutX="289.0" layoutY="472.0" onAction="#mealUpdateOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #3498db;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnMealDelete" buttonType="RAISED" layoutX="459.0" layoutY="472.0" onAction="#mealDeleteOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #EA2027;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="621.0" layoutY="472.0" onAction="#mealClearSelectionOnAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #f39c12 #f39c12;" text="Clear Selection" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="166.0" fitWidth="203.0" layoutX="757.0" layoutY="49.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../assets/thai-food-shrimp-squid-fried-cooked-with-long-beans-rice-min.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl1" layoutX="390.0" layoutY="195.0" prefHeight="32.0" prefWidth="180.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lbl2" layoutX="611.0" layoutY="254.0" prefHeight="32.0" prefWidth="193.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl3" layoutX="390.0" layoutY="315.0" prefHeight="32.0" prefWidth="152.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl4" layoutX="331.0" layoutY="372.0" prefHeight="32.0" prefWidth="146.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="pizzaTab" onSelectionChanged="#clearPizzaPage" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Pizza">
+               <content>
+                  <Pane prefHeight="480.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <Label layoutX="64.0" layoutY="43.0" text="Select Pizza">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="36.0" fitWidth="75.0" layoutX="214.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-pizza-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXComboBox fx:id="cmbPizza" layoutX="64.0" layoutY="92.0" onAction="#cmbPizzaOnAction" prefHeight="31.0" prefWidth="302.0" promptText="Pizza" />
+                        <Label layoutX="64.0" layoutY="194.0" text="Pizza ID :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPizzaId" layoutX="190.0" layoutY="193.0" onAction="#txtPizzaIdOnAction" onKeyReleased="#checkPizzaId" prefHeight="35.0" prefWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="63.0" layoutY="254.0" text="Description :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPizzaDescription" layoutX="190.0" layoutY="250.0" onAction="#txtPizzaDesOnAction" onKeyReleased="#checkPizzaDescription" prefHeight="35.0" prefWidth="404.0" promptText="BBQ Chicken Pizza" />
+                        <Label layoutX="63.0" layoutY="313.0" text="Unit Price :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPizzaUnitPrice" layoutX="190.0" layoutY="309.0" onAction="#txtPizzaUnitPriceOnAction" onKeyReleased="#checkPizzaUnitPrice" prefHeight="35.0" prefWidth="188.0" promptText="850.00" />
+                        <Label layoutX="66.0" layoutY="373.0" text="Quantity :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPizzaQuantity" layoutX="190.0" layoutY="369.0" onKeyReleased="#checkPizzaQty" prefHeight="35.0" prefWidth="126.0" promptText="0" />
+                        <JFXButton fx:id="btnAddPizza" buttonType="RAISED" layoutX="119.0" layoutY="472.0" onAction="#pizzaAddOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #16a085;" text="+ Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdatePizza" buttonType="RAISED" layoutX="292.0" layoutY="472.0" onAction="#pizzaUpdateOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #3498db;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDeletePizza" buttonType="RAISED" layoutX="460.0" layoutY="472.0" onAction="#pizzaDeleteOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #EA2027;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="621.0" layoutY="472.0" onAction="#pizzaClearSelectionOnAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #f39c12 #f39c12;" text="Clear Selection" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="166.0" fitWidth="203.0" layoutX="759.0" layoutY="48.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../assets/mixed-pizza-with-various-ingridients-min.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl5" layoutX="392.0" layoutY="192.0" prefHeight="32.0" prefWidth="180.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl6" layoutX="621.0" layoutY="252.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl7" layoutX="392.0" layoutY="311.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl8" layoutX="337.0" layoutY="371.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="burgerTab" onSelectionChanged="#clearBurgerPage" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Burger">
+               <content>
+                  <Pane prefHeight="673.0" prefWidth="1041.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <Label layoutX="67.0" layoutY="44.0" text="Select Burger">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="36.0" fitWidth="75.0" layoutX="231.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-burger-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXComboBox fx:id="cmbBurger" layoutX="67.0" layoutY="99.0" onAction="#cmbBurgerOnAction" prefHeight="31.0" prefWidth="302.0" promptText="Burger" />
+                        <Label layoutX="67.0" layoutY="193.0" text="Burger ID :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBurgerId" layoutX="211.0" layoutY="190.0" onAction="#txtBurgerIdOnAction" onKeyReleased="#checkBurgerId" prefHeight="35.0" prefWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="66.0" layoutY="251.0" text="Description :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBurgerDescription" layoutX="210.0" layoutY="248.0" onAction="#txtBurgerDesOnAction" onKeyReleased="#checkBurgerDescription" prefHeight="35.0" prefWidth="404.0" promptText="Veggie Burger" />
+                        <Label layoutX="67.0" layoutY="312.0" text="Unit Price :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBurgerUnitPrice" layoutX="211.0" layoutY="309.0" onAction="#txtBurgerUnitPriceOnAction" onKeyReleased="#checkBurgerUnitPrice" prefHeight="35.0" prefWidth="188.0" promptText="650.00" />
+                        <Label layoutX="67.0" layoutY="375.0" text="Quantity :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBurgerQuantity" layoutX="211.0" layoutY="372.0" onKeyReleased="#checkBurgerQty" prefHeight="35.0" prefWidth="126.0" promptText="0" />
+                        <JFXButton fx:id="btnAddBurger" buttonType="RAISED" layoutX="119.0" layoutY="472.0" onAction="#burgerAddOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #16a085;" text="+ Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdateBurger" buttonType="RAISED" layoutX="291.0" layoutY="472.0" onAction="#burgerUpdateOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #3498db;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDeleteBurger" buttonType="RAISED" layoutX="459.0" layoutY="472.0" onAction="#burgerDeleteOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #EA2027;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="621.0" layoutY="472.0" onAction="#burgerClearSelectionOnAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #f39c12 #f39c12;" text="Clear Selection" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="166.0" fitWidth="203.0" layoutX="759.0" layoutY="47.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../assets/front-view-burger-stand-min.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl9" layoutX="412.0" layoutY="191.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl10" layoutX="635.0" layoutY="250.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl11" layoutX="412.0" layoutY="311.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl12" layoutX="349.0" layoutY="374.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="drinkTab" onSelectionChanged="#clearBeveragePage" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Drink">
+               <content>
+                  <Pane prefHeight="592.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <Label layoutX="69.0" layoutY="43.0" text="Select Beverage">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="36.0" fitWidth="75.0" layoutX="249.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-cola-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXComboBox fx:id="cmbBeverage" layoutX="69.0" layoutY="98.0" onAction="#cmbBeverageOnAction" prefHeight="31.0" prefWidth="302.0" promptText="Beverage" />
+                        <Label layoutX="66.0" layoutY="188.0" text="Beverage ID :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBevId" layoutX="220.0" layoutY="185.0" onAction="#txtBeverageIdOnAction" onKeyReleased="#checkBeverageId" prefHeight="35.0" prefWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="66.0" layoutY="244.0" text="Description :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBevDescription" layoutX="220.0" layoutY="241.0" onAction="#txtBevDesOnAction" onKeyReleased="#checkBeverageDescription" prefHeight="35.0" prefWidth="404.0" promptText="Sprite-500ml" />
+                        <Label layoutX="66.0" layoutY="302.0" text="Unit Price :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBevUnitPrice" layoutX="220.0" layoutY="299.0" onAction="#txtBevUnitPriceOnAction" onKeyReleased="#checkBeverageUnitPrice" prefHeight="35.0" prefWidth="188.0" promptText="100.00" />
+                        <Label layoutX="67.0" layoutY="362.0" text="Quantity :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBevQuantity" layoutX="220.0" layoutY="359.0" onKeyReleased="#checkBeverageQty" prefHeight="35.0" prefWidth="126.0" promptText="0" />
+                        <JFXButton fx:id="btnAddBeverage" buttonType="RAISED" layoutX="122.0" layoutY="472.0" onAction="#beverageAddOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #16a085;" text="+ Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdateBeverage" buttonType="RAISED" layoutX="293.0" layoutY="472.0" onAction="#beverageUpdateOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #3498db;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDeleteBeverage" buttonType="RAISED" layoutX="459.0" layoutY="472.0" onAction="#beverageDeleteOnAction" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #EA2027;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="624.0" layoutY="472.0" onAction="#beverageClearSelectionOnAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #f39c12 #f39c12;" text="Clear Selection" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="166.0" fitWidth="203.0" layoutX="755.0" layoutY="47.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../assets/210-min.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl13" layoutX="422.0" layoutY="187.0" prefHeight="32.0" prefWidth="180.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl14" layoutX="641.0" layoutY="243.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl15" layoutX="422.0" layoutY="301.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl16" layoutX="362.0" layoutY="360.0" prefHeight="32.0" prefWidth="180.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="414.0" layoutY="13.0" text="Manage Food Items" textFill="#000000c9">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="29.0" prefHeight="6.0" prefWidth="394.0" />
+      <Separator layoutX="627.0" layoutY="31.0" prefHeight="6.0" prefWidth="400.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="context" prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FinancialReportsFormController">
+   <children>
+      <Text layoutX="98.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="411.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="749.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annually Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Separator layoutX="308.0" layoutY="94.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="8.0" />
+      <Separator layoutX="669.0" layoutY="94.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="8.0" />
+      <JFXDatePicker fx:id="dailyReportsDatePicker" defaultColor="#2980b9" layoutX="30.0" layoutY="178.0" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: BLACK; -fx-border-width: 2;" />
+      <JFXButton buttonType="RAISED" layoutX="95.0" layoutY="339.0" onAction="#dailyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ComboBox fx:id="cmbMonthlyYear" layoutX="393.0" layoutY="178.0" minHeight="38.0" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <Text layoutX="326.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="326.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbMonthlyMonth" layoutX="426.0" layoutY="252.0" minHeight="38.0" prefHeight="38.0" prefWidth="220.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <JFXButton buttonType="RAISED" layoutX="435.0" layoutY="339.0" onAction="#monthlyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="682.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbAnnuallyYear" layoutX="747.0" layoutY="177.0" minHeight="38.0" prefHeight="38.0" prefWidth="220.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <JFXButton buttonType="RAISED" layoutX="796.0" layoutY="339.0" onAction="#annuallyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="435.0" layoutY="14.0" text="Income Reports" textFill="#000000c9">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="11.0" layoutY="30.0" prefHeight="6.0" prefWidth="394.0" />
+      <Separator layoutX="624.0" layoutY="32.0" prefHeight="6.0" prefWidth="400.0" />
+   </children>
+</AnchorPane>

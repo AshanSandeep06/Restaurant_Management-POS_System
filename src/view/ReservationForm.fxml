@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="560.0" prefWidth="865.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationFormController">
+   <children>
+      <TabPane layoutX="5.0" layoutY="5.0" prefHeight="556.0" prefWidth="862.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0">
+         <tabs>
+            <Tab onSelectionChanged="#clearView" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-tab-min-width: 50;" text="View">
+               <content>
+                  <Pane prefHeight="556.0" prefWidth="862.0">
+                     <children>
+                        <Text layoutX="16.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="52.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="viewDatePicker" layoutX="80.0" layoutY="32.0" onHiding="#getReservations" prefHeight="34.0" prefWidth="228.0" style="-fx-border-width: 0; -fx-border-color: #2c3e50; -fx-font-size: 15; -fx-font-weight: bold;" />
+                        <TableView fx:id="tblViewReservation" layoutX="16.0" layoutY="90.0" prefHeight="386.0" prefWidth="829.0" style="-fx-border-color: #2c2c54;">
+                           <columns>
+                              <TableColumn fx:id="colResId" prefWidth="113.0" style="-fx-font-size: 15;" text="Reservation ID" />
+                              <TableColumn fx:id="colCusName" prefWidth="248.0" style="-fx-font-size: 15;" text="Customer Name" />
+                              <TableColumn fx:id="colCusMobileNumber" prefWidth="192.0" style="-fx-font-size: 15;" text="Customer Mobile" />
+                              <TableColumn fx:id="colTime" prefWidth="157.0" style="-fx-font-size: 15;" text="Time " />
+                              <TableColumn fx:id="colParticipants" prefWidth="118.0" style="-fx-font-size: 15;" text="Paricipants" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#clearReservation" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Add Reservation">
+               <content>
+                  <Pane prefHeight="434.0" prefWidth="862.0">
+                     <children>
+                        <TextField fx:id="txtAddResCusNumber" layoutX="289.0" layoutY="68.0" onAction="#searchCustomerOnAction" onKeyReleased="#checkMobileNumberOnAction" prefHeight="46.0" prefWidth="287.0" promptText="search here" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtAddResCusName" layoutX="290.0" layoutY="196.0" onKeyReleased="#checkCustomerName" prefHeight="46.0" prefWidth="287.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="btnAddCustomer" buttonType="RAISED" layoutX="610.0" layoutY="266.0" onAction="#addCustomerOnAction" prefHeight="1.0" prefWidth="115.0" style="-fx-background-color: #16a085;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <Text layoutX="311.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID :" wrappingWidth="136.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="lblReservationID" layoutX="456.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R-000001" wrappingWidth="94.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="20.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="52.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="320.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="52.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="581.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants :" wrappingWidth="112.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="addResDatePicker" editable="false" layoutX="83.0" layoutY="348.0" onHiding="#addDatePickerOnAction" prefHeight="34.0" prefWidth="199.0" style="-fx-border-width: 3; -fx-border-color: #2c3e50; -fx-font-size: 15; -fx-font-weight: bold;" />
+                        <JFXTimePicker fx:id="addResTimePicker" layoutX="380.0" layoutY="348.0" onHiding="#addTimePickerOnAction" prefHeight="37.0" prefWidth="177.0" style="-fx-border-color: #2c3e50; -fx-border-width: 3; -fx-font-size: 15; -fx-font-weight: bold;" />
+                        <TextField fx:id="addResParticipants" layoutX="700.0" layoutY="343.0" onKeyReleased="#checkOnAction" prefHeight="37.0" prefWidth="136.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="btnAddReservation" layoutX="423.0" layoutY="434.0" onAction="#addReservationOnAction" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #27ae60;" text="Add Reservation" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="241.0" layoutY="434.0" onAction="#cancelReservationOnAction" prefHeight="24.0" prefWidth="82.0" style="-fx-background-color: #e74c3c;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="26.0" layoutY="205.0" text="Customer Name :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="77.0" text="Customer Mobile Number :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAddResCusId" layoutX="290.0" layoutY="132.0" onKeyReleased="#checkCustomerId" prefHeight="46.0" prefWidth="287.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="26.0" layoutY="141.0" text="Customer ID :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAddResCusAddress" layoutX="290.0" layoutY="259.0" onKeyReleased="#checkCustomerAddress" prefHeight="46.0" prefWidth="287.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="26.0" layoutY="268.0" text="Customer Address :">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNumber" layoutX="438.0" layoutY="114.0" prefHeight="19.0" prefWidth="163.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCustomerId" layoutX="458.0" layoutY="178.0" prefHeight="19.0" prefWidth="163.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCusName" layoutX="439.0" layoutY="243.0" prefHeight="19.0" prefWidth="163.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCusAddress" layoutX="428.0" layoutY="305.0" prefHeight="19.0" prefWidth="163.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblParticipants" layoutX="701.0" layoutY="389.0" prefHeight="19.0" prefWidth="150.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#clearManageReservation" style="-fx-font-size: 15; -fx-font-weight: bold;" text="Mange Reservations">
+               <content>
+                  <Pane prefHeight="556.0" prefWidth="862.0">
+                     <children>
+                        <Text layoutX="470.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name :" wrappingWidth="234.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="txtManageCustomerName" editable="false" layoutX="625.0" layoutY="21.0" onKeyReleased="#manageCusNameCheckOnAction" prefHeight="34.0" prefWidth="224.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="20.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="52.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="311.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="52.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="579.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants :" wrappingWidth="112.173828125">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="manageResDatePicker" editable="false" layoutX="86.0" layoutY="342.0" onHiding="#manageDatePickerOnAction" prefHeight="34.0" prefWidth="199.0" style="-fx-border-width: 3; -fx-border-color: #2c3e50; -fx-font-size: 15; -fx-font-weight: bold;" />
+                        <JFXTimePicker fx:id="manageResTimePicker" layoutX="374.0" layoutY="342.0" onHiding="#manageTimePickerOnAction" prefHeight="37.0" prefWidth="177.0" style="-fx-border-color: #2c3e50; -fx-border-width: 3; -fx-font-size: 15; -fx-font-weight: bold;" />
+                        <TextField fx:id="manageResParticipants" layoutX="703.0" layoutY="337.0" onKeyReleased="#manageCheckOnAction" prefHeight="37.0" prefWidth="136.0" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="714.0" layoutY="438.0" onAction="#deleteReservationOnAction" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: #e84118;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <TableView fx:id="tblManageReservation" layoutX="17.0" layoutY="94.0" prefHeight="217.0" prefWidth="828.0">
+                           <columns>
+                              <TableColumn fx:id="colManageResId" prefWidth="150.0" style="-fx-font-size: 15;" text="Reservation ID" />
+                              <TableColumn fx:id="colManageResDate" prefWidth="248.0" style="-fx-font-size: 15;" text="Reservation Date " />
+                              <TableColumn fx:id="colManageResTime" prefWidth="285.0" style="-fx-font-size: 15;" text="Reservation Time" />
+                              <TableColumn fx:id="colManageResParticipants" prefWidth="144.0" style="-fx-font-size: 15;" text="Participants" />
+                           </columns>
+                        </TableView>
+                        <JFXButton fx:id="btnUpdate" layoutX="551.0" layoutY="438.0" onAction="#updateReservationOnAction" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: #2980b9;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="14.0" layoutY="30.0" text="Customer Mobile Number :">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtManageMobileNumber" layoutX="255.0" layoutY="20.0" onAction="#txtManageSearchMobileOnAction" onKeyReleased="#manageMobileCheckOnAction" prefHeight="46.0" prefWidth="200.0" promptText="search here" style="-fx-border-color: #2c3e50;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="lblManageMobileNumber" layoutX="317.0" layoutY="66.0" prefHeight="19.0" prefWidth="140.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblManageCusName" layoutX="626.0" layoutY="64.0" prefHeight="19.0" prefWidth="140.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblManageParticipants" layoutX="704.0" layoutY="383.0" prefHeight="19.0" prefWidth="140.0" textFill="RED">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

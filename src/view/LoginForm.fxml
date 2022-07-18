@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="783.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+    <children>
+      <AnchorPane layoutX="-1.0" prefHeight="783.0" prefWidth="430.0" style="-fx-background-color: #16287c;">
+         <children>
+            <Label layoutX="8.0" layoutY="758.0" text="Version 1.0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="160.0" layoutY="57.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="138.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-person-100.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUserName" layoutX="196.0" layoutY="437.0" onAction="#txtUserNameOnAction" style="-fx-border-color: #2980b9;" />
+            <Label layoutX="31.0" layoutY="438.0" text="User Name :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="490.0" text="Password :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPassword" layoutX="196.0" layoutY="490.0" style="-fx-border-color: #2980b9;" />
+            <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="651.0" onAction="#loginOnAction" prefHeight="29.0" prefWidth="163.0" style="-fx-background-color: #14539A; -fx-border-color: BLACK;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="273.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-rating-circled-100.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="783.0" fitWidth="977.0" layoutX="429.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay-min.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="444.0" layoutY="84.0" text="Grand Highway Express" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="560.0" layoutY="126.0" text="Restaurant" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="444.0" layoutY="718.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-email-64.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="485.0" layoutY="720.0" text="grandhighwayexpress@gmail.com" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="444.0" layoutY="747.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-call-100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="482.0" layoutY="751.0" text="+94 765631592" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="444.0" layoutY="686.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-facebook-100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="485.0" layoutY="690.0" text="Grand Highway Restaurant" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

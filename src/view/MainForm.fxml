@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2bec3" height="271.0" layoutX="69.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="568.0" />
+      <TableView fx:id="tblMostMovable" layoutX="82.0" layoutY="174.0" prefHeight="190.0" prefWidth="544.0" style="-fx-background-color: #a5b1c2;">
+         <columns>
+            <TableColumn fx:id="colMostFoodID" prefWidth="95.0" text="Food ID" />
+            <TableColumn fx:id="colMostDesc" prefWidth="231.0" text="Description" />
+            <TableColumn fx:id="colMostUnitPrice" prefWidth="120.0" text="Unit Price" />
+            <TableColumn fx:id="colMostQty" prefWidth="97.0" text="Qty (Sold)" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="82.0" layoutY="116.0" prefHeight="48.0" prefWidth="544.0" style="-fx-background-color: #0fb9b1;" text="Most Moveable Food Items" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2bec3" height="271.0" layoutX="69.0" layoutY="413.0" stroke="BLACK" strokeType="INSIDE" width="568.0" />
+      <TableView fx:id="tblLeastMovable" layoutX="82.0" layoutY="483.0" prefHeight="190.0" prefWidth="544.0" style="-fx-background-color: #a5b1c2;">
+         <columns>
+            <TableColumn fx:id="colleastFoodID" prefWidth="95.0" text="Food ID" />
+            <TableColumn fx:id="colLeastDescription" prefWidth="231.0" text="Description" />
+            <TableColumn fx:id="colLeastUnitPrice" prefWidth="118.0" text="Unit Price" />
+            <TableColumn fx:id="colLeastQty" prefWidth="99.0" text="Qty (Sold)" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="82.0" layoutY="425.0" prefHeight="48.0" prefWidth="544.0" style="-fx-background-color: #0fb9b1;" text="Least Moveable Food Items" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="778.0" layoutY="27.0" prefHeight="144.0" prefWidth="162.0" style="-fx-background-color: #27ae60;" />
+      <Label layoutX="789.0" layoutY="32.0" prefHeight="61.0" prefWidth="103.0" text="Total Orders" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalOrder" alignment="CENTER" layoutX="808.0" layoutY="89.0" prefHeight="48.0" prefWidth="65.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="778.0" layoutY="196.0" prefHeight="144.0" prefWidth="162.0" style="-fx-background-color: #2980b9;" />
+      <Label layoutX="793.0" layoutY="202.0" prefHeight="61.0" prefWidth="103.0" text="Paid Orders" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPaidOrder" alignment="CENTER" layoutX="803.0" layoutY="260.0" prefHeight="48.0" prefWidth="65.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="778.0" layoutY="539.0" prefHeight="144.0" prefWidth="162.0" style="-fx-background-color: #f39c12;" />
+      <Label layoutX="789.0" layoutY="549.0" prefHeight="61.0" prefWidth="134.0" text="Total Food Items" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFoodItems" alignment="CENTER" layoutX="803.0" layoutY="610.0" prefHeight="48.0" prefWidth="65.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="779.0" layoutY="370.0" prefHeight="144.0" prefWidth="162.0" style="-fx-background-color: #B71C1C;" />
+      <Label layoutX="785.0" layoutY="378.0" prefHeight="61.0" prefWidth="146.0" text="Pending Deliveries" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPendingDelivery" alignment="CENTER" layoutX="803.0" layoutY="439.0" prefHeight="48.0" prefWidth="65.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Text layoutX="104.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="29.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-home-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="866.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-purchase-order-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="866.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-paid-search-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="866.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-truck-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="866.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-street-food-100.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewFoodsAndEmployeesFormController">
+   <children>
+      <Label layoutX="436.0" layoutY="18.0" text="View Food Items" textFill="#000000c9">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="21.0" layoutY="31.0" prefHeight="5.0" prefWidth="401.0" />
+      <Separator layoutX="627.0" layoutY="27.0" prefHeight="12.0" prefWidth="386.0" />
+      <TabPane layoutY="64.0" prefHeight="678.0" prefWidth="1043.0" style="-fx-background-color: #98A7B1;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="50.0" tabMinWidth="242.0">
+         <tabs>
+            <Tab fx:id="FoodItemTab" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Meal">
+               <content>
+                  <Pane prefHeight="532.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <TableView fx:id="tblMeal" layoutX="20.0" layoutY="30.0" prefHeight="567.0" prefWidth="1004.0" style="-fx-border-color: BLACK; -fx-border-width: 1;">
+                          <columns>
+                            <TableColumn fx:id="colMealId" prefWidth="173.0" text="Food ID" />
+                              <TableColumn fx:id="colMealName" prefWidth="327.0" text="Food Name" />
+                              <TableColumn fx:id="colMealUnitPrice" prefWidth="201.0" text="Unit Price" />
+                              <TableColumn fx:id="colMealQtyOnHand" prefWidth="151.0" text="Qty On Hand" />
+                              <TableColumn fx:id="colMealDiscountedPrice" prefWidth="150.0" text="Discounted Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="EmployeeTab" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Pizza">
+               <content>
+                  <Pane prefHeight="480.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <TableView fx:id="tblPizza" layoutX="20.0" layoutY="30.0" prefHeight="567.0" prefWidth="1004.0" style="-fx-border-color: BLACK; -fx-border-width: 1;">
+                           <columns>
+                              <TableColumn fx:id="colPizzaId" prefWidth="173.0" text="Food ID" />
+                              <TableColumn fx:id="colPizzaName" prefWidth="327.0" text="Food Name" />
+                              <TableColumn fx:id="colPizzaUnitPrice" prefWidth="201.0" text="Unit Price" />
+                              <TableColumn fx:id="colPizzaQtyOnHand" prefWidth="151.0" text="Qty On Hand" />
+                              <TableColumn fx:id="colPizzaDiscountedPrice" prefWidth="150.0" text="Discounted Price" />
+                           </columns>
+                        </TableView>
+                     </children></Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="burgerTab" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Burger">
+               <content>
+                  <Pane prefHeight="480.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <TableView fx:id="tblBurger" layoutX="20.0" layoutY="30.0" prefHeight="567.0" prefWidth="1004.0" style="-fx-border-color: BLACK; -fx-border-width: 1;">
+                           <columns>
+                              <TableColumn fx:id="colBurgerId" prefWidth="173.0" text="Food ID" />
+                              <TableColumn fx:id="colBurgerName" prefWidth="327.0" text="Food Name" />
+                              <TableColumn fx:id="colBurgerUnitPrice" prefWidth="201.0" text="Unit Price" />
+                              <TableColumn fx:id="colBurgerQtyOnHand" prefWidth="151.0" text="Qty On Hand" />
+                              <TableColumn fx:id="colBurgerDisPrice" prefWidth="150.0" text="Discounted Price" />
+                           </columns>
+                        </TableView>
+                     </children></Pane>
+               </content>
+            </Tab>
+            <Tab fx:id="beverageTab" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #F3F3F3;" text="Beverage">
+               <content>
+                  <Pane prefHeight="480.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;">
+                     <children>
+                        <TableView fx:id="tblDrink" layoutX="20.0" layoutY="30.0" prefHeight="567.0" prefWidth="1004.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                           <columns>
+                              <TableColumn fx:id="colDrinkId" prefWidth="173.0" text="Food ID" />
+                              <TableColumn fx:id="colDrinkName" prefWidth="327.0" text="Food Name" />
+                              <TableColumn fx:id="colDrinkUnitPrice" prefWidth="201.0" text="Unit Price" />
+                              <TableColumn fx:id="colDrinkQtyOnHand" prefWidth="151.0" text="Qty On Hand" />
+                              <TableColumn fx:id="colDrinkDisPrice" prefWidth="150.0" text="Discounted Price" />
+                           </columns>
+                        </TableView>
+                     </children></Pane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

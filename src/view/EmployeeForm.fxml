@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeFormController">
+   <children>
+      <Label layoutX="422.0" layoutY="14.0" text="Manage Employee">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="9.0" layoutY="33.0" prefHeight="3.0" prefWidth="406.0" />
+      <Separator layoutX="618.0" layoutY="30.0" prefHeight="3.0" prefWidth="406.0" />
+      <VBox layoutX="30.0" layoutY="48.0" onKeyReleased="#ActionOne" prefHeight="266.0" prefWidth="467.0" stylesheets="@../styles/style.css">
+         <children>
+            <AnchorPane prefHeight="41.0" prefWidth="472.0" styleClass="textPane" stylesheets="@../styles/style.css">
+               <children>
+                  <TextField fx:id="txtEmpId" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkEmployeeId" prefHeight="31.0" prefWidth="406.0" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" style="-fx-background-color: WHITE;" styleClass="textLabel" stylesheets="@../styles/style.css" text="Employee ID" />
+                  <Label fx:id="lblEmployee" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane" stylesheets="@../styles/style.css">
+               <children>
+                  <TextField fx:id="txtEmpName" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkEmployeeName" prefHeight="28.0" prefWidth="406.0" promptText="Nimal Perera" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Employee Name" />
+                  <Label fx:id="lblEmployeeName" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane" stylesheets="@../styles/style.css">
+               <children>
+                  <TextField fx:id="txtEmpNIC" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkEmployeeNIC" prefHeight="28.0" prefWidth="406.0" promptText="2001102015V" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Employee NIC" />
+                  <Label fx:id="lblNIC" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane" stylesheets="@../styles/style.css">
+               <children>
+                  <TextField fx:id="txtEmpAddress" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkEmployeeAddress" prefHeight="28.0" prefWidth="406.0" promptText="Galle" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Address" />
+                  <Label fx:id="lblEmployeeAddress" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <ComboBox fx:id="cmbJobRole" layoutX="140.0" layoutY="313.0" prefHeight="31.0" prefWidth="184.0" promptText="Job Role" />
+      <Label layoutX="30.0" layoutY="315.0" text="Job Role :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="315.0" text="Bike No :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBikeNumber" layoutX="459.0" layoutY="310.0" onAction="#txtBikeNoOnAction" onKeyReleased="#checkBikeNumber" promptText="AAB-5480" style="-fx-border-color: #9a9a9a; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 3;" />
+      <Label layoutX="690.0" layoutY="315.0" text="Liscene No :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtLisceneNo" layoutX="801.0" layoutY="310.0" onKeyReleased="#checkLisceneNO" promptText="B1234567" style="-fx-border-color: #9a9a9a; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 3;" />
+      <JFXButton buttonType="RAISED" layoutX="30.0" layoutY="382.0" onAction="#resetOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-radius: 15; -fx-background-color: #F08705;" text="Reset" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblEmployeeDetails" layoutX="30.0" layoutY="436.0" prefHeight="275.0" prefWidth="970.0">
+        <columns>
+          <TableColumn fx:id="colEmpId" prefWidth="108.0" text="Employee ID" />
+          <TableColumn fx:id="colEmpName" prefWidth="172.0" text="Employee Name" />
+            <TableColumn fx:id="colEmpNIC" prefWidth="155.0" text="Employee NIC" />
+            <TableColumn fx:id="colEmpAddress" prefWidth="119.0" text="Address" />
+            <TableColumn fx:id="colEmpContact" prefWidth="176.0" text="Contact Number" />
+            <TableColumn fx:id="colEmpPost" prefWidth="122.0" text="Post" />
+            <TableColumn fx:id="colEmpWoHours" prefWidth="117.0" text="Working Hours" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddEmployee" buttonType="RAISED" layoutX="527.0" layoutY="382.0" onAction="#addEmployeeOnAction" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #009432;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="686.0" layoutY="382.0" onAction="#updateEmployeeOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #FFC312;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="853.0" layoutY="382.0" onAction="#removeEmployeeOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #EA2027;" text="Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <VBox layoutX="523.0" layoutY="48.0" onKeyReleased="#ActionTwo" prefHeight="266.0" prefWidth="467.0" stylesheets="@../styles/style.css">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtEmpContactNumber" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkEmployeeNumber" prefHeight="28.0" prefWidth="406.0" promptText="0774562983" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Contact Number" />
+                  <Label fx:id="lblContactNumber" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtEmpWorkHours" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkWorkingHours" prefHeight="28.0" prefWidth="406.0" promptText="8" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Working Hours" />
+                  <Label fx:id="lblWorkingHours" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtEmpUserName" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkUserName" prefHeight="28.0" prefWidth="406.0" promptText="Must be 5-10 characters" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="User Name" />
+                  <Label fx:id="lblUserName" layoutX="265.0" layoutY="10.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="42.0" prefWidth="438.0" styleClass="textPane">
+               <children>
+                  <TextField fx:id="txtEmpPassword" layoutX="13.0" layoutY="8.0" onKeyReleased="#checkPassword" prefHeight="28.0" prefWidth="406.0" promptText="Must be include A-Z,a-z,0-9" styleClass="textField" />
+                  <Label layoutX="2.0" layoutY="-9.0" styleClass="textLabel" stylesheets="@../styles/style.css" text="Password" />
+                  <Label fx:id="lblPassword" layoutX="265.0" layoutY="8.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Label fx:id="lblBikeNumber" layoutX="500.0" layoutY="345.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLisceneNumber" layoutX="836.0" layoutY="344.0" prefHeight="27.0" prefWidth="154.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblComboBoxJobRole" layoutX="170.0" layoutY="345.0" prefHeight="27.0" prefWidth="154.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,189 @@
+DROP DATABASE IF EXISTS ResturantManagement;
+CREATE DATABASE IF NOT EXISTS ResturantManagement;
+SHOW DATABASES ;
+USE ResturantManagement;
+SHOW TABLES ;
+
+DROP TABLE IF EXISTS Employee;
+CREATE TABLE IF NOT EXISTS Employee(
+                                       employeeId VARCHAR (20),
+                                       employeeName VARCHAR (30),
+                                       address VARCHAR (30),
+                                       employeeNic VARCHAR (20),
+                                       contact VARCHAR (20),
+                                       jobRole VARCHAR (20),
+                                       workingHours DECIMAL(8,2),
+                                       CONSTRAINT PRIMARY KEY (employeeId)
+);
+DESCRIBE Employee;
+#---------------------------------
+DROP TABLE IF EXISTS Login;
+CREATE TABLE IF NOT EXISTS Login(
+                                    password VARCHAR (20),
+                                    userName VARCHAR (20),
+                                    employeeId VARCHAR (20),
+                                    jobRole VARCHAR(20),
+                                    CONSTRAINT PRIMARY KEY (password),
+                                    CONSTRAINT FOREIGN KEY (employeeId) REFERENCES Employee(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES ;
+DESCRIBE Login;
+
+INSERT INTO Login (userName,password,jobRole) VALUES ('Ashan065','ashan123','Admin');
+SELECT * FROM Login;
+
+DROP TABLE IF EXISTS Item;
+CREATE TABLE IF NOT EXISTS Item(
+                                   foodId VARCHAR (20),
+                                   foodType VARCHAR(20),
+                                   description VARCHAR(35),
+                                   unitPrice DECIMAL(8,2),
+                                   qtyOnHand INT,
+                                   CONSTRAINT PRIMARY KEY (foodId)
+);
+
+alter table Item modify column qtyOnHand INT UNSIGNED NOT NULL;
+
+
+INSERT INTO Item VALUES ('F001','Meal','Rice & curry-half','250.00',2);
+INSERT INTO Item VALUES ('F002','Burger','Chicken burger-medium','550.00',5);
+INSERT INTO Item VALUES ('F003','Burger','Chicken burger-large','700.00',5);
+INSERT INTO Item VALUES ('F004','Pizza','BBQ pizza-medium','550.00',5);
+INSERT INTO Item VALUES ('F005','Beverage','Sprite-500 ml','100.00',10);
+
+DROP TABLE IF EXISTS Driver;
+CREATE TABLE IF NOT EXISTS Driver(
+                                     driverBikeNumber VARCHAR (20),
+                                     driverLisceneNo VARCHAR (20),
+                                     employeeId VARCHAR (20),
+                                     CONSTRAINT PRIMARY KEY (employeeId),
+                                     CONSTRAINT FOREIGN KEY (employeeId) REFERENCES Employee(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer(
+                                       customerId VARCHAR (20),
+                                       name VARCHAR (85),
+                                       address VARCHAR (85),
+                                       contactNumber VARCHAR (15),
+                                       CONSTRAINT PRIMARY KEY (customerId)
+);
+
+INSERT INTO Customer VALUES ('C001','Sunil Premathilaka','29/D,Thelwatta Junction,Unawatuna,Galle','0778905678');
+INSERT INTO Customer VALUES ('C002','Nimal Bandara','30/D,Makuluwa Junction,Galle','0778905456');
+INSERT INTO Customer VALUES ('C003','Kishan Madushanka','45/D,CheenaKoratuwa,Galle','0785673402');
+
+DROP TABLE IF EXISTS Package;
+CREATE TABLE IF NOT EXISTS Package(
+                                      packageId VARCHAR (20),
+                                      packageName VARCHAR(20),
+                                      packagePrice DECIMAL(8,2),
+                                      CONSTRAINT PRIMARY KEY (packageId)
+);
+
+DROP TABLE IF EXISTS PackageDetail;
+CREATE TABLE IF NOT EXISTS PackageDetail(
+                                            packageId VARCHAR (20) NOT NULL ,
+                                            foodId VARCHAR(20),
+                                            foodType VARCHAR(20),
+                                            qty INT,
+                                            unitPrice VARCHAR(20),
+                                            CONSTRAINT FOREIGN KEY (packageId) REFERENCES Package(packageId) ON DELETE CASCADE ON UPDATE CASCADE,
+                                            CONSTRAINT FOREIGN KEY (foodId) REFERENCES Item(foodId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Discount;
+CREATE TABLE IF NOT EXISTS Discount(
+                                       discountId VARCHAR (20) ,
+                                       discountPrice DOUBLE,
+                                       foodId VARCHAR(20),
+                                       startDate DATE,
+                                       closeDate DATE,
+                                       CONSTRAINT PRIMARY KEY (discountId),
+                                       CONSTRAINT FOREIGN KEY (foodId) REFERENCES Item(foodId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS `Order`;
+CREATE TABLE IF NOT EXISTS `Order`(
+                                      orderId VARCHAR (20),
+                                      customerId VARCHAR(20),
+                                      orderDate VARCHAR(20),
+                                      orderTime VARCHAR(20),
+                                      orderType VARCHAR(20),
+                                      subTotal DECIMAL(8,2),
+                                      deliveryCharges DECIMAL(8,2),
+                                      grandTotal DECIMAL(8,2),
+                                      orderState VARCHAR(20),
+                                      CONSTRAINT PRIMARY KEY (orderId),
+                                      CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS OrderDetail;
+CREATE TABLE IF NOT EXISTS OrderDetail(
+                                          orderId VARCHAR (20) NOT NULL ,
+                                          foodId VARCHAR(20) NOT NULL,
+                                          foodType VARCHAR(20),
+                                          unitPrice DECIMAL(8,2),
+                                          qty INT,
+                                          CONSTRAINT FOREIGN KEY (orderId) REFERENCES `Order`(orderId) ON DELETE CASCADE ON UPDATE CASCADE,
+                                          CONSTRAINT FOREIGN KEY (foodId) REFERENCES Item(foodId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Reservation;
+CREATE TABLE IF NOT EXISTS Reservation(
+                                          reservationId VARCHAR (20),
+                                          customerId VARCHAR (20),
+                                          reservationDate VARCHAR (20),
+                                          reservationTime VARCHAR (20),
+                                          totalParticipants INT,
+                                          CONSTRAINT PRIMARY KEY (reservationId),
+                                          CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Delivery;
+CREATE TABLE IF NOT EXISTS Delivery(
+                                       orderId VARCHAR (20),
+                                       riderId VARCHAR(20),
+                                       CONSTRAINT FOREIGN KEY (orderId) REFERENCES `Order`(orderId) ON DELETE CASCADE ON UPDATE CASCADE,
+                                       CONSTRAINT FOREIGN KEY (riderId) REFERENCES Driver(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Transaction;
+CREATE TABLE IF NOT EXISTS Transaction(
+                                          transactionId VARCHAR(20),
+                                          customerId VARCHAR (20),
+                                          orderId VARCHAR(20),
+                                          cashierId VARCHAR(20),
+                                          totalAmount DECIMAL(8,2),
+                                          paidAmount DECIMAL(8,2),
+                                          balanceAmount DECIMAL(8,2),
+                                          CONSTRAINT PRIMARY KEY (transactionId),
+                                          CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE,
+                                          CONSTRAINT FOREIGN KEY (orderId) REFERENCES `Order`(orderId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS Attendance;
+CREATE TABLE IF NOT EXISTS Attendance(
+                                          attendanceId VARCHAR(20),
+                                          employeeId VARCHAR(20),
+                                          employeeName VARCHAR(45),
+                                          attendDate DATE,
+                                          workingHours DECIMAL(8,2),
+                                          jobRole VARCHAR(20),
+                                          CONSTRAINT PRIMARY KEY (attendanceId),
+                                          CONSTRAINT FOREIGN KEY (employeeId) REFERENCES Employee(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+DROP TABLE IF EXISTS Payment;
+CREATE TABLE IF NOT EXISTS Payment(
+                                         paymentId VARCHAR(20),
+                                         employeeId VARCHAR(20),
+                                         employeeName VARCHAR(45),
+                                         paymentDate DATE,
+                                         jobRole VARCHAR(20),
+                                         totalSalary DOUBLE,
+                                         CONSTRAINT PRIMARY KEY (paymentId),
+                                         CONSTRAINT FOREIGN KEY (employeeId) REFERENCES Employee(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+
+);

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EmployeeAttendanceReport" pageWidth="625" pageHeight="842" columnWidth="585" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e8670f7-424b-4154-911d-992d6a07ee0e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Restaurant Management"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Attendance where employeeId=$P{id};]]>
+	</queryString>
+	<field name="attendanceId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="attendanceId"/>
+		<property name="com.jaspersoft.studio.field.label" value="attendanceId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="employeeId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="employeeId"/>
+		<property name="com.jaspersoft.studio.field.label" value="employeeId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="employeeName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="employeeName"/>
+		<property name="com.jaspersoft.studio.field.label" value="employeeName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="attendDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="attendDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="attendDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="workingType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="workingType"/>
+		<property name="com.jaspersoft.studio.field.label" value="workingType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="workingHours" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="workingHours"/>
+		<property name="com.jaspersoft.studio.field.label" value="workingHours"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<field name="jobRole" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jobRole"/>
+		<property name="com.jaspersoft.studio.field.label" value="jobRole"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="attendance"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="585" height="30" forecolor="#594343" uuid="6ef7bb09-3abc-45b0-99c4-de77396b6a73"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRAND HIGHWAY RESTAURANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="585" height="30" forecolor="#3D302E" uuid="4611d63b-b2a5-47d2-ada5-b0f74d2d97aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Employee Attendance Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="81" height="30" uuid="18401d17-33a3-4350-812f-c845c6797b29">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a865359c-1ed8-4e7a-8458-0cdacda95afd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[attendanceId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="0" width="79" height="30" uuid="bdd2a110-4c71-40c4-80d5-83c4ff72c4f0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7544a6b-4c5c-4916-ab2e-b2fe40690e96"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[employeeId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="0" width="93" height="30" uuid="aca3f0a8-9dec-43c7-b861-2554ebaea300">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a2d02b6-4297-4edb-86ac-c6e45cf0a407"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[employeeName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="79" height="30" uuid="8d517991-f384-49c5-9f46-28509042732c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eebb83c-6dfc-4114-87d2-aa86ad7186c1"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[attendDate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="0" width="79" height="30" uuid="79cc22d0-0e89-4175-85db-ae284cf12384">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cefc768-fe66-4223-a3ba-afd275cf886a"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[workingType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="86" height="30" uuid="c40c3ce4-7a11-4c29-9d26-8e3e3a3e1deb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a6c10cc-932a-4e8d-b727-6d766e730ae8"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[workingHours]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="516" y="0" width="64" height="30" uuid="60ff709c-5ddc-4340-8b03-de848527c381">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6617e7a7-4f5d-4ed5-af0f-e4d1c899bdd0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[jobRole]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="81" height="20" uuid="f8845b58-69e5-4735-b6de-1a3c9830a09a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a865359c-1ed8-4e7a-8458-0cdacda95afd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{attendanceId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="0" width="79" height="20" uuid="e8b00c11-2431-464d-862e-90ebdfdb67a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7544a6b-4c5c-4916-ab2e-b2fe40690e96"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{employeeId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="79" height="20" uuid="8203a000-2713-43b9-9612-4858bdbb92be">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a2d02b6-4297-4edb-86ac-c6e45cf0a407"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{employeeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="0" width="79" height="20" uuid="0842983d-2ff2-490a-88f3-b4848997ec7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eebb83c-6dfc-4114-87d2-aa86ad7186c1"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{attendDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="79" height="20" uuid="13414422-6a78-4f95-9d61-0f1715edd61f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cefc768-fe66-4223-a3ba-afd275cf886a"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{workingType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="0" width="79" height="20" uuid="728e4ff6-c41a-45fb-a008-fc4411937081">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a6c10cc-932a-4e8d-b727-6d766e730ae8"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{workingHours}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="79" height="20" uuid="82b44a4f-1de4-4815-8bf5-e22df943b7f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6617e7a7-4f5d-4ed5-af0f-e4d1c899bdd0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jobRole}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

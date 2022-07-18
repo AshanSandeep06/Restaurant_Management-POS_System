@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyIncomeReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8dc4e27-6531-4f8c-aee6-fdf1b69780a0">
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="ordersIncome" class="java.lang.String"/>
+	<parameter name="grossIncome" class="java.lang.String"/>
+	<parameter name="expenses" class="java.lang.String"/>
+	<parameter name="netIncome" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="555" height="30" uuid="c034fcb7-c946-49cb-bd87-64a5123f2fc6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRAND HIGHWAY RESTAURANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="555" height="30" forecolor="#575252" uuid="013b66aa-9461-4932-9d92-1cc965320095"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Southern Express Road, Galle]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="87" width="555" height="1" uuid="69edd127-e440-4af0-a0a3-69109bf2d7ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="1" y="55" width="100" height="30" uuid="1763e947-24c9-424f-b524-8a776cdc6660"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="457" y="55" width="100" height="30" uuid="e4c7aa34-5f15-48fe-8405-22d85950f0ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="414" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="555" height="30" forecolor="#2B0E0D" uuid="35ffabe8-d44c-4ce4-8b9a-a3462399ef8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Baskerville Old Face" size="22" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Daily Income Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="69" width="110" height="30" uuid="2ce61213-a1bf-41d8-82a9-6fd53d6960ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bodoni MT" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date  :-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="180" width="142" height="30" uuid="5ace9c4d-94a2-4c34-9d2d-d2a703fa6921"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Bodoni MT" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orders Income  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="230" width="142" height="30" uuid="66fec885-e77c-4c6b-a882-1652773bc27c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bodoni MT" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gross Income  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="280" width="142" height="30" forecolor="#DE2926" uuid="d3175f07-f470-4bec-b9cb-a263cdd2cc60"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bodoni MT" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expenses  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="340" width="142" height="30" forecolor="#4E9C5F" uuid="46aff535-4008-4696-b155-f862965ca5e5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bodoni MT" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Income  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="69" width="100" height="30" uuid="44968b8d-408d-4c7c-bdc4-6c52a97c8011"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="180" width="140" height="30" uuid="65416d1f-b6ac-4e42-a2b7-d71340d70a16">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ordersIncome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="230" width="117" height="30" uuid="5eab2f6f-af06-4711-8a23-f2583e73d0b3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grossIncome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="280" width="100" height="30" forecolor="#DE2926" uuid="c910a0d9-8faf-4b7e-99bf-9e2150a560ea">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{expenses}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="340" width="114" height="30" forecolor="#4E9C5F" uuid="d43dfb06-4762-474f-8143-b2037268674e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{netIncome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="404" width="555" height="1" uuid="c53db397-ed63-42cc-99ee-544abe51ebf5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="555" height="30" uuid="95238cc6-3186-473d-bda5-457b7c60e0eb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email : grandhighwayexpress@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="5" width="555" height="30" uuid="00017337-7114-40b3-910e-6bf7513b8ee2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile : +94 765631592]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="733.0" prefWidth="1033.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeAttendenceFormController">
+   <children>
+      <Label layoutX="359.0" layoutY="12.0" text="Manage Employee Attendance" textFill="#000000c9">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="28.0" prefHeight="6.0" prefWidth="333.0" />
+      <Separator layoutX="686.0" layoutY="28.0" prefHeight="6.0" prefWidth="333.0" />
+      <JFXTextField fx:id="txtEmpId" focusColor="#16287c" labelFloat="true" layoutX="23.0" layoutY="139.0" onAction="#employeeSearchOnAction" onKeyReleased="#checkEmployeeIdOnAction" prefHeight="25.0" prefWidth="204.0" promptText="Employee ID" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtEmpName" editable="false" focusColor="#16287c" labelFloat="true" layoutX="257.0" layoutY="139.0" prefHeight="25.0" prefWidth="204.0" promptText="Employee Name" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtAddress" editable="false" focusColor="#16287c" labelFloat="true" layoutX="257.0" layoutY="200.0" prefHeight="25.0" prefWidth="297.0" promptText="Address" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtNic" editable="false" focusColor="#16287c" labelFloat="true" layoutX="494.0" layoutY="139.0" prefHeight="25.0" prefWidth="267.0" promptText="Employee NIC" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtWorkingHours" editable="false" focusColor="#16287c" labelFloat="true" layoutX="822.0" layoutY="200.0" prefHeight="31.0" prefWidth="173.0" promptText="Working Hours" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtContact" editable="false" focusColor="#16287c" labelFloat="true" layoutX="584.0" layoutY="200.0" prefHeight="27.0" prefWidth="204.0" promptText="Contact" unFocusColor="#16287c" />
+      <JFXTextField fx:id="txtPost" editable="false" focusColor="#16287c" labelFloat="true" layoutX="788.0" layoutY="139.0" prefHeight="27.0" prefWidth="204.0" promptText="Post" unFocusColor="#16287c" />
+      <Label layoutX="23.0" layoutY="259.0" prefHeight="27.0" prefWidth="132.0" text="Working Type :" textFill="#16287c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbWorkingTypes" layoutX="168.0" layoutY="257.0" prefHeight="25.0" prefWidth="216.0" />
+      <Label layoutX="409.0" layoutY="259.0" prefHeight="27.0" prefWidth="145.0" text="Working Hours :" textFill="#16287c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblWorkingHours" alignment="TOP_CENTER" layoutX="554.0" layoutY="259.0" prefHeight="27.0" prefWidth="38.0" text="0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmployeeId" layoutX="23.0" layoutY="171.0" text="Type &amp; Enter Here" textFill="#ea2027">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="595.0" layoutY="259.0" prefHeight="27.0" prefWidth="51.0" text="hours">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblAttendance" layoutX="29.0" layoutY="364.0" prefHeight="350.0" prefWidth="975.0">
+         <columns>
+            <TableColumn fx:id="colAttendanceId" prefWidth="139.0" text="Attendance ID" />
+            <TableColumn fx:id="colEmployeeID" prefWidth="125.0" text="Employee ID" />
+            <TableColumn fx:id="colEmployeeName" prefWidth="180.0" text="Employee Name" />
+            <TableColumn fx:id="colWorkingType" prefWidth="116.0" text="Working Type" />
+            <TableColumn fx:id="colWorkingHours" prefWidth="123.0" text="Working Hours" />
+            <TableColumn fx:id="colDate" prefWidth="150.0" text="Attend Date" />
+            <TableColumn fx:id="colPost" prefWidth="141.0" text="Post" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddAttendance" buttonType="RAISED" layoutX="476.0" layoutY="310.0" onAction="#addAttendanceOnAction" prefHeight="32.0" prefWidth="138.0" style="-fx-background-color: #16a085;" text="Add Attendance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteAttendance" buttonType="RAISED" layoutX="847.0" layoutY="310.0" onAction="#deleteAttendanceOnAction" prefHeight="32.0" prefWidth="157.0" style="-fx-background-color: #e84118;" text="Delete Attendance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnModifyAttendance" buttonType="RAISED" layoutX="652.0" layoutY="310.0" onAction="#modifyAttendanceOnAction" prefHeight="32.0" prefWidth="157.0" style="-fx-background-color: #0B3554;" text="Modify Attendance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="29.0" layoutY="43.0" prefHeight="39.0" prefWidth="455.0" style="-fx-background-color: #F3F3F3; -fx-border-color: #F3F3F3;">
+         <children>
+            <Label fx:id="lblAttendanceID" layoutX="188.0" layoutY="5.0" prefHeight="27.0" prefWidth="124.0" text="A-000001" textFill="#16287c">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutY="6.0" text="Next Attendance ID :" textFill="#16287c">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnAttendanceReport" buttonType="RAISED" layoutX="29.0" layoutY="310.0" onMouseClicked="#attendanceReportOnAction" prefHeight="32.0" prefWidth="157.0" style="-fx-background-color: #f39c12; -fx-background-radius: 45;" text="Attendance Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="686.0" layoutY="257.0" onAction="#clearAllOnAction" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #1083D5;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
